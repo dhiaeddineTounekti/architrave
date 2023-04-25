@@ -1,12 +1,11 @@
-from dataclasses import dataclass
+from mongoengine import Document, StringField, IntField
 
-@dataclass
-class Document:
-    customerId: str
-    documentId: int
-    documentPath: str
-    documentFileName: str
-    mimeType: str
-    lastUpdatedAt: str
-    uploadedAt: str
-    uploadedByUserId: str
+class Document(Document):
+    customerId= StringField(required=True)
+    documentId= IntField(required=True)
+    documentPath= StringField(required=True)
+    documentFileName= StringField(required=True)
+    mimeType= StringField(required=True)
+    lastUpdatedAt= StringField()
+    uploadedAt= StringField(required=True)
+    uploadedByUserId= StringField(required=True)

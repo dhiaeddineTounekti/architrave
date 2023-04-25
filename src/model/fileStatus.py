@@ -1,11 +1,11 @@
-from dataclasses import dataclass
+from mongoengine import Document, StringField, IntField
 
-@dataclass
-class DocumentStatus:
-    customerId: str
-    documentId: int
-    documentContentHash: str
-    documentMetadataHash: str
-    IngestionStatus: str
-    extractionStatus: str
-    logs: str
+
+class DocumentStatus(Document):
+    customerId= StringField(required=True)
+    documentId= IntField(required=True)
+    documentContentHash= StringField()
+    documentMetadataHash= StringField()
+    IngestionStatus= StringField()
+    extractionStatus= StringField()
+    logs= StringField()
