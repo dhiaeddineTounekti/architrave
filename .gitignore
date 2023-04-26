@@ -1,1 +1,4 @@
 /.idea
+.*
+./architraveEnv
+*__pycache__*
